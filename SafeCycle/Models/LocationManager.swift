@@ -37,6 +37,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     @Published var degrees: Double = 0
     @Published var direction: Double = 0
+    @Published var speed: Double = 0
     @Published var location: CLLocationCoordinate2D?
     @Published var destination: SearchResult?
     @Published var route: MKRoute?
@@ -77,7 +78,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.last?.coordinate
+        if let lastLocation = locations.last {
+            location = lastLocation.coordinate
+            speed = lastLocation.speed < 0 ? 0 : lastLocation.speed * 3.6 * 0.6213711922  // Convert to km/h
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

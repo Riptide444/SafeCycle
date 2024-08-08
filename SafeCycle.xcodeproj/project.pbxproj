@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		731974952C612744007EAA6D /* VariableBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731974942C612744007EAA6D /* VariableBlur.swift */; };
+		731974972C61290C007EAA6D /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731974962C61290C007EAA6D /* BluetoothManager.swift */; };
+		7319749A2C63FFB1007EAA6D /* CocoaMQTT in Frameworks */ = {isa = PBXBuildFile; productRef = 731974992C63FFB1007EAA6D /* CocoaMQTT */; };
+		7319749C2C63FFB1007EAA6D /* CocoaMQTTWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 7319749B2C63FFB1007EAA6D /* CocoaMQTTWebSocket */; };
+		7319749E2C63FFC6007EAA6D /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7319749D2C63FFC6007EAA6D /* MQTTManager.swift */; };
+		731974A12C6407F7007EAA6D /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 731974A02C6407F7007EAA6D /* Starscream */; };
 		73285B022C4ECD7B00FE9A0B /* SafeCycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73285B012C4ECD7B00FE9A0B /* SafeCycleApp.swift */; };
 		73285B042C4ECD7B00FE9A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73285B032C4ECD7B00FE9A0B /* ContentView.swift */; };
 		73285B062C4ECD7D00FE9A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73285B052C4ECD7D00FE9A0B /* Assets.xcassets */; };
@@ -48,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		731974942C612744007EAA6D /* VariableBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableBlur.swift; sourceTree = "<group>"; };
+		731974962C61290C007EAA6D /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		7319749D2C63FFC6007EAA6D /* MQTTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
 		73285AFE2C4ECD7B00FE9A0B /* SafeCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73285B012C4ECD7B00FE9A0B /* SafeCycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCycleApp.swift; sourceTree = "<group>"; };
 		73285B032C4ECD7B00FE9A0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +89,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7319749C2C63FFB1007EAA6D /* CocoaMQTTWebSocket in Frameworks */,
+				7319749A2C63FFB1007EAA6D /* CocoaMQTT in Frameworks */,
+				731974A12C6407F7007EAA6D /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				73285B372C4FFAB900FE9A0B /* Components */,
+				73285B2F2C4EDD9000FE9A0B /* NavigationView.swift */,
 				73285B2D2C4EDA9000FE9A0B /* MapView.swift */,
 				73285B312C4EE08B00FE9A0B /* DirectionBarView.swift */,
 				73285B352C4FF4FF00FE9A0B /* WelcomeView.swift */,
@@ -178,6 +191,7 @@
 		73285B2C2C4EDA7C00FE9A0B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				731974942C612744007EAA6D /* VariableBlur.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,7 +199,6 @@
 		73285B372C4FFAB900FE9A0B /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				73285B2F2C4EDD9000FE9A0B /* NavigationView.swift */,
 				73285B332C4EEBE500FE9A0B /* TurnButtonView.swift */,
 				73285B382C4FFAD200FE9A0B /* SearchButtonView.swift */,
 				73285B3E2C501D2900FE9A0B /* SearchResultView.swift */,
@@ -199,6 +212,8 @@
 				73285B412C502A0200FE9A0B /* LocationManager.swift */,
 				73DEB83E2C57E2A200EF8B37 /* SearchManager.swift */,
 				73503A012C59436A005CA764 /* NavigationManager.swift */,
+				731974962C61290C007EAA6D /* BluetoothManager.swift */,
+				7319749D2C63FFC6007EAA6D /* MQTTManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +234,11 @@
 			dependencies = (
 			);
 			name = SafeCycle;
+			packageProductDependencies = (
+				731974992C63FFB1007EAA6D /* CocoaMQTT */,
+				7319749B2C63FFB1007EAA6D /* CocoaMQTTWebSocket */,
+				731974A02C6407F7007EAA6D /* Starscream */,
+			);
 			productName = SafeCycle;
 			productReference = 73285AFE2C4ECD7B00FE9A0B /* SafeCycle.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +311,10 @@
 				Base,
 			);
 			mainGroup = 73285AF52C4ECD7B00FE9A0B;
+			packageReferences = (
+				731974982C63FFB1007EAA6D /* XCRemoteSwiftPackageReference "CocoaMQTT" */,
+				7319749F2C6407F7007EAA6D /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = 73285AFF2C4ECD7B00FE9A0B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7319749E2C63FFC6007EAA6D /* MQTTManager.swift in Sources */,
 				73285B3D2C50019000FE9A0B /* SearchView.swift in Sources */,
 				73285B3B2C50000F00FE9A0B /* HomeView.swift in Sources */,
 				73285B322C4EE08B00FE9A0B /* DirectionBarView.swift in Sources */,
@@ -349,6 +374,8 @@
 				73285B422C502A0200FE9A0B /* LocationManager.swift in Sources */,
 				73285B362C4FF4FF00FE9A0B /* WelcomeView.swift in Sources */,
 				73503A022C59436A005CA764 /* NavigationManager.swift in Sources */,
+				731974972C61290C007EAA6D /* BluetoothManager.swift in Sources */,
+				731974952C612744007EAA6D /* VariableBlur.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +543,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SafeCycle/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect your device to your SafeCycle companion app.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Connect your device to your SafeCycle companion app.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "SafeCycle uses your location to implement navigation functionality.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SafeCycle uses your location to implement navigation functionality.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -548,6 +577,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SafeCycle/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Connect your device to your SafeCycle companion app.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Connect your device to your SafeCycle companion app.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "SafeCycle uses your location to implement navigation functionality.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SafeCycle uses your location to implement navigation functionality.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -684,6 +715,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		731974982C63FFB1007EAA6D /* XCRemoteSwiftPackageReference "CocoaMQTT" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/emqx/CocoaMQTT";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.8;
+			};
+		};
+		7319749F2C6407F7007EAA6D /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		731974992C63FFB1007EAA6D /* CocoaMQTT */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 731974982C63FFB1007EAA6D /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			productName = CocoaMQTT;
+		};
+		7319749B2C63FFB1007EAA6D /* CocoaMQTTWebSocket */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 731974982C63FFB1007EAA6D /* XCRemoteSwiftPackageReference "CocoaMQTT" */;
+			productName = CocoaMQTTWebSocket;
+		};
+		731974A02C6407F7007EAA6D /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7319749F2C6407F7007EAA6D /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 73285AF62C4ECD7B00FE9A0B /* Project object */;
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var searchManager = SearchManager()
+    @ObservedObject var bluetoothManager: BluetoothManager
     @ObservedObject var locationManager: LocationManager
     @ObservedObject var navigationManager: NavigationManager
     @Namespace var searchNamespace
@@ -83,6 +84,9 @@ struct HomeView: View {
                         self.eta = locationManager.getETA(route: route)
                     }
                 }
+                .onAppear {
+                    bluetoothManager.sendMessage(bluetoothManager.message)
+                }
         }
     }
 }
@@ -96,5 +100,5 @@ func formatTime(eta: Eta) -> String {
 }
 
 #Preview {
-    HomeView(locationManager: LocationManager(), navigationManager: NavigationManager())
+    HomeView(bluetoothManager: BluetoothManager(), locationManager: LocationManager(), navigationManager: NavigationManager())
 }

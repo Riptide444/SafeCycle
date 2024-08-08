@@ -19,21 +19,22 @@ class NavigationManager: ObservableObject {
     @Published var upcomingDirection: Direction?
     @Published var step: Int = 0
     @Published var distanceToNextStep: Double = 0.0
+    @Published var isStopping: Bool = false
     @Published var lastStep: Bool = false
     @Published var nearNextStep: Bool = false
     @Published var activeSession: Bool = false
+    private var speedCache = [Double]()
     
     func checkStepState(stepCoordinate: CLLocationCoordinate2D, nextStepCoordinate: CLLocationCoordinate2D, oldLocation: CLLocationCoordinate2D, newLocation: CLLocationCoordinate2D) {
         if distanceBetween(coord1: oldLocation, coord2: stepCoordinate) < distanceBetween(coord1: newLocation, coord2: stepCoordinate) && distanceBetween(coord1: newLocation, coord2: nextStepCoordinate) < distanceBetween(coord1: oldLocation, coord2: nextStepCoordinate) {
             // Approaching next step
+            nearNextStep = false
+            upcomingDirection = nil
             if step + 1 < route!.steps.count - 1 {
-                nearNextStep = false
                 step += 1
             } else {
-                nearNextStep = false
                 lastStep = true
             }
-            
         }
     }
     
@@ -52,7 +53,7 @@ class NavigationManager: ObservableObject {
     }
     
     func nearStep(stepCoordinate: CLLocationCoordinate2D, location: CLLocationCoordinate2D) {
-        if distanceBetween(coord1: stepCoordinate, coord2: location) < 0.04572 {
+        if distanceBetween(coord1: stepCoordinate, coord2: location) / 0.0003048 < 120 {
             // Within 150 ft of next step
             nearNextStep = true
             if upcomingDirection == nil, let route {
@@ -60,6 +61,22 @@ class NavigationManager: ObservableObject {
                     upcomingDirection = .left
                 } else if route.steps[step].instructions.lowercased().contains("right") {
                     upcomingDirection = .right
+                }
+            }
+        }
+    }
+    
+    func checkStopping(previousSpeed pSpeed: Double, newSpeed nSpeed: Double) {
+        for i in [pSpeed,nSpeed] {
+            if speedCache.count < 4 {
+                speedCache.append(i)
+            } else {
+                speedCache.removeFirst()
+                speedCache.append(i)
+                if speedCache[0] > speedCache[1], speedCache[1] > speedCache[2], speedCache[2] > speedCache[3] {
+                    upcomingDirection = .stop
+                } else if speedCache[3] > speedCache[2], speedCache[2] > speedCache[1], speedCache[1] > speedCache[0] {
+                    upcomingDirection = .stop
                 }
             }
         }
