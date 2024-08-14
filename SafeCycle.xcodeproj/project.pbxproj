@@ -13,6 +13,9 @@
 		7319749C2C63FFB1007EAA6D /* CocoaMQTTWebSocket in Frameworks */ = {isa = PBXBuildFile; productRef = 7319749B2C63FFB1007EAA6D /* CocoaMQTTWebSocket */; };
 		7319749E2C63FFC6007EAA6D /* MQTTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7319749D2C63FFC6007EAA6D /* MQTTManager.swift */; };
 		731974A12C6407F7007EAA6D /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 731974A02C6407F7007EAA6D /* Starscream */; };
+		731974A32C6A4BC2007EAA6D /* CrashManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731974A22C6A4BC2007EAA6D /* CrashManager.swift */; };
+		731974A52C6A4C7D007EAA6D /* CrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731974A42C6A4C7D007EAA6D /* CrashView.swift */; };
+		731974A72C6A67C9007EAA6D /* VehicleAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731974A62C6A67C9007EAA6D /* VehicleAlertView.swift */; };
 		73285B022C4ECD7B00FE9A0B /* SafeCycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73285B012C4ECD7B00FE9A0B /* SafeCycleApp.swift */; };
 		73285B042C4ECD7B00FE9A0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73285B032C4ECD7B00FE9A0B /* ContentView.swift */; };
 		73285B062C4ECD7D00FE9A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73285B052C4ECD7D00FE9A0B /* Assets.xcassets */; };
@@ -57,6 +60,9 @@
 		731974942C612744007EAA6D /* VariableBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableBlur.swift; sourceTree = "<group>"; };
 		731974962C61290C007EAA6D /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
 		7319749D2C63FFC6007EAA6D /* MQTTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTManager.swift; sourceTree = "<group>"; };
+		731974A22C6A4BC2007EAA6D /* CrashManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashManager.swift; sourceTree = "<group>"; };
+		731974A42C6A4C7D007EAA6D /* CrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashView.swift; sourceTree = "<group>"; };
+		731974A62C6A67C9007EAA6D /* VehicleAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAlertView.swift; sourceTree = "<group>"; };
 		73285AFE2C4ECD7B00FE9A0B /* SafeCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73285B012C4ECD7B00FE9A0B /* SafeCycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeCycleApp.swift; sourceTree = "<group>"; };
 		73285B032C4ECD7B00FE9A0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -184,6 +190,7 @@
 				73285B3C2C50019000FE9A0B /* SearchView.swift */,
 				73A739342C529A9400DC2277 /* MapTestView.swift */,
 				73503A032C5C0A4C005CA764 /* StepsExpandedView.swift */,
+				731974A42C6A4C7D007EAA6D /* CrashView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +209,7 @@
 				73285B332C4EEBE500FE9A0B /* TurnButtonView.swift */,
 				73285B382C4FFAD200FE9A0B /* SearchButtonView.swift */,
 				73285B3E2C501D2900FE9A0B /* SearchResultView.swift */,
+				731974A62C6A67C9007EAA6D /* VehicleAlertView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -214,6 +222,7 @@
 				73503A012C59436A005CA764 /* NavigationManager.swift */,
 				731974962C61290C007EAA6D /* BluetoothManager.swift */,
 				7319749D2C63FFC6007EAA6D /* MQTTManager.swift */,
+				731974A22C6A4BC2007EAA6D /* CrashManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -358,12 +367,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7319749E2C63FFC6007EAA6D /* MQTTManager.swift in Sources */,
+				731974A32C6A4BC2007EAA6D /* CrashManager.swift in Sources */,
 				73285B3D2C50019000FE9A0B /* SearchView.swift in Sources */,
 				73285B3B2C50000F00FE9A0B /* HomeView.swift in Sources */,
 				73285B322C4EE08B00FE9A0B /* DirectionBarView.swift in Sources */,
 				73285B342C4EEBE500FE9A0B /* TurnButtonView.swift in Sources */,
+				731974A72C6A67C9007EAA6D /* VehicleAlertView.swift in Sources */,
 				73DEB83F2C57E2A200EF8B37 /* SearchManager.swift in Sources */,
 				73503A042C5C0A4C005CA764 /* StepsExpandedView.swift in Sources */,
+				731974A52C6A4C7D007EAA6D /* CrashView.swift in Sources */,
 				73A739352C529A9400DC2277 /* MapTestView.swift in Sources */,
 				73285B042C4ECD7B00FE9A0B /* ContentView.swift in Sources */,
 				73285B2E2C4EDA9000FE9A0B /* MapView.swift in Sources */,

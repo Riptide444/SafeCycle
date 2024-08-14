@@ -49,7 +49,6 @@ class NavigationManager: ObservableObject {
     
     func getNextStepDistance(stepCoordinate: CLLocationCoordinate2D, location: CLLocationCoordinate2D) {
         distanceToNextStep = distanceBetween(coord1: stepCoordinate, coord2: location) / 0.0003048
-        print(distanceToNextStep)
     }
     
     func nearStep(stepCoordinate: CLLocationCoordinate2D, location: CLLocationCoordinate2D) {

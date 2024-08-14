@@ -31,7 +31,7 @@ struct WelcomeView: View {
                 withAnimation {
                     welcomeToggle = false
                     // MQTT Publish
-                    mqttManager.publish(message: "off", topic: "safecycle")
+                    mqttManager.publish(message: "on", topic: "safecycle")
                 }
             }, label: {
                 Text("Connect Your SafeCycle")

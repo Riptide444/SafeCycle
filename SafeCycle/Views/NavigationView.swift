@@ -18,21 +18,21 @@ struct NavigationView: View {
             MapView(locationManager: locationManager, navigationManager: navigationManager)
                 .safeAreaInset(edge: .bottom) {
                     VStack {
-                        ZStack {
-                            Text("Near next step?")
-                                .fontWeight(.semibold)
-                            +
-                            Text(navigationManager.nearNextStep ? " Yes" : " No")
-                        }
-                        .padding()
-                        .background(.thinMaterial)
-                        .clipShape(RoundedRectangle(cornerRadius: 25))
-                        .padding(.bottom, 8)
+//                        ZStack {
+//                            Text("Near next step?")
+//                                .fontWeight(.semibold)
+//                            +
+//                            Text(navigationManager.nearNextStep ? " Yes" : " No")
+//                        }
+//                        .padding()
+//                        .background(.thinMaterial)
+//                        .clipShape(RoundedRectangle(cornerRadius: 25))
+//                        .padding(.bottom, 8)
                         TurnButtonView(navigationManager: navigationManager)
                             .padding(.horizontal)
                             .padding(.bottom, 8)
                             .onChange(of: navigationManager.upcomingDirection, initial: false) {_, newValue in
-                                
+                                mqttManager.changeDirection(newDirection: newValue)
                             }
                         DirectionBarView(navigationManager: navigationManager)
                             .padding([.horizontal, .bottom])

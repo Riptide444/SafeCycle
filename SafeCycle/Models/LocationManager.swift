@@ -55,7 +55,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func requestLocationPermission() {
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
-        print("request")
     }
     
     func calculateDirection(oldCoordinate: CLLocationCoordinate2D, newCoordinate: CLLocationCoordinate2D) {

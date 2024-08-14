@@ -30,6 +30,10 @@ struct DirectionBarView: View {
             .padding()
             .background(.thinMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 35))
+            .overlay {
+                RoundedRectangle(cornerRadius: 35)
+                    .strokeBorder(.foreground.opacity(0.2), lineWidth: 1)
+            }
         }
     }
 }

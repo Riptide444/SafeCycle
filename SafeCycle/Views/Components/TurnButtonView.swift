@@ -25,12 +25,20 @@ struct TurnButtonView: View {
                         .padding(25)
                         .background(.thinMaterial)
                         .clipShape(RoundedRectangle(cornerRadius: 35))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 35)
+                                .strokeBorder(.foreground.opacity(0.2), lineWidth: 1)
+                        }
                 } else {
                     Image(systemName: "arrowshape.turn.up.left.fill")
                         .padding(25)
                         .foregroundStyle(.white)
                         .background(.blue)
                         .clipShape(RoundedRectangle(cornerRadius: 35))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 35)
+                                .strokeBorder(.white.opacity(0.6), lineWidth: 2)
+                        }
                 }
             })
             .foregroundStyle(.primary)
@@ -53,6 +61,10 @@ struct TurnButtonView: View {
                     .padding(.vertical, 20)
                     .background(.thinMaterial)
                     .clipShape(RoundedRectangle(cornerRadius: 35))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 35)
+                            .strokeBorder(.foreground.opacity(0.2), lineWidth: 1)
+                    }
                     .padding(.horizontal, 8)
                 } else {
                     HStack {
@@ -66,6 +78,10 @@ struct TurnButtonView: View {
                     .padding(.vertical, 20)
                     .background(.blue)
                     .clipShape(RoundedRectangle(cornerRadius: 35))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 35)
+                            .strokeBorder(.white.opacity(0.6), lineWidth: 2)
+                    }
                     .padding(.horizontal, 8)
                     
                 }
@@ -83,12 +99,20 @@ struct TurnButtonView: View {
                         .padding(25)
                         .background(.thinMaterial)
                         .clipShape(RoundedRectangle(cornerRadius: 35))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 35)
+                                .strokeBorder(.foreground.opacity(0.2), lineWidth: 1)
+                        }
                 } else {
                     Image(systemName: "arrowshape.turn.up.right.fill")
                         .padding(25)
                         .foregroundStyle(.white)
                         .background(.blue)
                         .clipShape(RoundedRectangle(cornerRadius: 35))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 35)
+                                .strokeBorder(.white.opacity(0.6), lineWidth: 2)
+                        }
                 }
             })
             .foregroundStyle(.primary)
